@@ -3,9 +3,12 @@ import { useState } from 'react';
 import { motion } from "framer-motion";
 import { CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
+import { AiOutlineMail } from 'react-icons/ai'; 
+import { FaInstagram, FaTwitter, FaLinkedin, FaPhoneAlt } from 'react-icons/fa'; 
 import Image from "next/image";
 import mec from '@/public/mec.png';
 import idealab from '@/public/idealab.jpeg';
+import idealab2 from '@/public/idealab2.jpg';
 import cognicor from '@/public/cognicor.webp';
 import member1 from '@/public/alan_biju.jpg';
 import member2 from '@/public/godson.png';
@@ -358,7 +361,6 @@ export default function Home() {
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source src="/server.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
         </video>
 
         {/* Overlay */}
@@ -368,7 +370,7 @@ export default function Home() {
         <nav className="relative z-10 container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center">
             <Image 
-              src={idealab} 
+              src={idealab2} 
               alt="IDEALAB MEC Logo" 
               width={50} 
               height={50} 
@@ -415,13 +417,13 @@ export default function Home() {
               </button>
             </div>
             
-            <form onSubmit={handleBookingSubmit} className="space-y-4">
+            <form onSubmit={handleBookingSubmit} className="space-y-4 ">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
                 <input
                   type="text"
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={bookingForm.name}
                   onChange={(e) => setBookingForm({...bookingForm, name: e.target.value})}
                 />
@@ -432,7 +434,7 @@ export default function Home() {
                 <input
                   type="tel"
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={bookingForm.phone}
                   onChange={(e) => setBookingForm({...bookingForm, phone: e.target.value})}
                 />
@@ -443,7 +445,7 @@ export default function Home() {
                 <input
                   type="email"
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={bookingForm.email}
                   onChange={(e) => setBookingForm({...bookingForm, email: e.target.value})}
                 />
@@ -454,7 +456,7 @@ export default function Home() {
                 <input
                   type="text"
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={bookingForm.college}
                   onChange={(e) => setBookingForm({...bookingForm, college: e.target.value})}
                 />
@@ -465,7 +467,7 @@ export default function Home() {
                 <input
                   type="text"
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={bookingForm.className}
                   onChange={(e) => setBookingForm({...bookingForm, className: e.target.value})}
                 />
@@ -476,7 +478,7 @@ export default function Home() {
                 <input
                   type="date"
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={bookingForm.appointmentDate}
                   onChange={(e) => setBookingForm({...bookingForm, appointmentDate: e.target.value})}
                 />
@@ -486,7 +488,7 @@ export default function Home() {
                 <label className="block text-sm font-medium text-gray-700 mb-1">Equipment</label>
                 <select
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border text-gray-500 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={bookingForm.equipment}
                   onChange={(e) => setBookingForm({...bookingForm, equipment: e.target.value})}
                 >
@@ -503,7 +505,7 @@ export default function Home() {
                 <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
                 <textarea
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 h-24"
+                  className="w-full px-3 py-2 border text-gray-500 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 h-24"
                   value={bookingForm.description}
                   onChange={(e) => setBookingForm({...bookingForm, description: e.target.value})}
                   placeholder="Please describe your intended use..."
@@ -552,7 +554,7 @@ export default function Home() {
       <section id="initiatives" className="py-20 bg-[#D9D9D9] ">
         <div  className="border-t border-[#bbbbbb] pb-16 mx-12"></div>
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#353535]">Our Initiatives</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#353535]" data-aos="fade-up">Our Initiatives</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -794,22 +796,26 @@ export default function Home() {
           {/* Contact Information */}
           <div className="text-center mb-8">
             <h3 className="text-xl font-semibold mb-4">Connect with us</h3>
-              <div className="flex justify-center space-x-6">
-                <a href="mailto:contact@idealabmec.com" className="flex items-center space-x-2 text-blue-600 hover:text-blue-800">
-                  <span>📧</span>
-                  <span>Email Us</span>
-                </a>
-                <a href="https://instagram.com/idealabmec" className="flex items-center space-x-2 text-blue-600 hover:text-blue-800">
-                  <span>📱</span>
-                  <span>Follow Us</span>
-                </a>
-              </div>
-            <div className="space-y-2">
+            <div className="flex justify-center space-x-6">
+              <a href="mailto:idealab@mec.ac.in" className="flex items-center space-x-2 text-red-600 hover:text-red-800">
+                <AiOutlineMail size={24} />
+                  </a>
+              <a href="https://twitter.com/idealab_mec" className="flex items-center space-x-2 text-blue-600 hover:text-blue-800">
+                <FaTwitter size={24} />
+                
+              </a>
+              <a href="https://instagram.com/idealab_mec" className="flex items-center space-x-2 text-yellow-600 hover:text-yellow-800">
+                <FaInstagram size={24} />
+                
+              </a>
+              <a href="tel:+919605169646" className="flex items-center space-x-2 text-green-600 hover:text-green-800">
+                <FaPhoneAlt size={22} />
+              </a>
+            </div>
+            <div className="space-y-2 pt-6">
               <p className="font-semibold">Model Engineering College</p>
               <p>Thrikkakara, Kochi</p>
               <p>Kerala, PIN: 682021</p>
-              <p>Contact: <a href="mailto:idealab@mec.ac.in" className="hover:text-blue-300">idealab@mec.ac.in</a></p>
-              <p>Phone: <a href="tel:9605169646" className="hover:text-blue-300">9605169646</a></p>
             </div>
           </div>
           <div className="text-center text-gray-400 space-y-2 mb-8">
