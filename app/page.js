@@ -252,7 +252,7 @@ export default function Home() {
     {
       title: "Snapmaker",
       image: tool8,
-      description: "SNAPMAKER a350t is a 3-in-one modular machine including a 3d printer, laser cutter and CNC engraver. It has built-in Wi-Fi for sending g-code files, p..."
+      description: "SNAPMAKER a350t is a 3-in-1 modular machine including a 3d printer, laser cutter and CNC engraver. It has built-in Wi-Fi for sending g-code files, p..."
     },
     {
       title: "SolidWorks Software",
@@ -352,19 +352,19 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <header className="relative w-full h-screen text-white">
+      <header className="relative w-full h-screen text-white overflow-hidden">
         <video 
           autoPlay 
           loop 
           muted 
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="fixed top-0 left-0 w-full h-screen object-cover -z-10"
         >
           <source src="/server.mp4" type="video/mp4" />
         </video>
 
-        {/* Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
+        {/* Gradient Overlay */}
+        <div className="fixed top-0 left-0 w-full h-screen bg-gradient-to-b from-transparent to-black opacity-90 -z-10"></div>
 
         {/* Navbar */}
         <nav className="relative z-10 container mx-auto px-6 py-4 flex justify-between items-center">
@@ -394,12 +394,32 @@ export default function Home() {
         </nav>
 
         {/* Hero Section */}
-        <div className="relative z-10 container mx-auto  pt-40 px-6 py-20 text-center">
+        <div className="relative z-10 container mx-auto pt-40 px-6 py-20 text-center">
           <h1 className="text-5xl font-bold mb-4">Innovate. Create. Transform.</h1>
           <p className="text-xl mb-16">The Innovation and Entrepreneurship Hub of Model Engineering College</p>
-          {/* <button className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors">
-            Join Us
-          </button> */}
+          
+          {/* New animated double chevron */}
+          <div className="animate-bounce mt-8 pt-16">
+            <svg 
+              className="w-8 h-8 mx-auto"
+              fill="none" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
+                stroke="url(#blue-gradient)" 
+                strokeWidth="1.5" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              />
+              <defs>
+                <linearGradient id="blue-gradient" x1="12" y1="3" x2="12" y2="21" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#60A5FA" />
+                  <stop offset="1" stopColor="#3B82F6" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
         </div>
       </header>
 
