@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import AOSInit from '@/utils/AOSInit';
+import 'aos/dist/aos.css';
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -25,7 +27,8 @@ export default function RootLayout({ children }) {
       <body
         className={`antialiased`}
       >
-        {children}
+       <AOSInit />
+       {children}
       </body>
     </html>
   );
