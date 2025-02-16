@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# IDEALAB MEC
 
-## Getting Started
+Welcome to Cognicor- AICTE IdeaLab at Model Engineering College, Thrikkakara - a hub for innovation, entrepreneurship, and technological development.
 
-First, run the development server:
+## 🎯 About IDEALAB
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[IDEALAB MEC](https://idea-lab-mec.vercel.app/)  is the innovation and entrepreneurship cell of Model Engineering College, established to foster innovation and support student entrepreneurs. We provide a platform for students to transform their ideas into successful ventures through mentorship, resources, and networking opportunities.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌟 Our Mission
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+To cultivate an innovation ecosystem that empowers students to:
+- Develop entrepreneurial mindset
+- Create impactful solutions
+- Build successful startups
+- Contribute to technological advancement
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 💡 Key Initiatives
 
-## Learn More
+1. **Startup Incubation**
+   - Mentorship from industry experts
+   - Access to funding opportunities
+   - Business development support
+   - Networking events
 
-To learn more about Next.js, take a look at the following resources:
+2. **Workshops & Training**
+   - Technical skill development
+   - Entrepreneurship workshops
+   - Industry expert sessions
+   - Hands-on project experience
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Innovation Lab**
+   - State-of-the-art prototyping facilities
+   - Technical resources
+   - Collaborative workspace
+   - Research opportunities
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## 🤝 Connect With Us
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Email: idealab@mec.ac.in
+- Phone: +91 9605169646
+- Twitter: [@idealab_mec](https://twitter.com/idealab_mec)
+- Instagram: [@idealab_mec](https://instagram.com/idealab_mec)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🏢 Institution Details
+
+IDEALAB is part of Model Engineering College, managed by the Institute of Human Resource Development (IHRD) and established by the Government of Kerala. MEC has been a pioneer in technical education since its inception and continues to lead in fostering innovation and entrepreneurship.
+
+
+
+### Building Tomorrow's Innovators Today 🚀
+
+---
+
+Made With ❤️ by Aaron Kurian Abraham
