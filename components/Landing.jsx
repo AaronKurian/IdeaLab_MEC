@@ -23,8 +23,17 @@ export default function Landing() {
 
       {/* Hero Section */}
       <div className="relative z-10 container mx-auto pt-40 px-6 py-20 text-center">
-        <h1 className="text-5xl font-bold mb-4">Innovate. Create. Transform.</h1>
-        <p className="text-xl mb-16">The Innovation and Entrepreneurship Hub of Model Engineering College</p>
+        <div className="relative">
+          <h1 className="text-7xl font-bold mb-1">Innovate. Create. Transform.</h1>
+          <h1 className="text-7xl font-bold opacity-[0.15] blur-[1.4px] scale-y-[-1] transform-gpu -mt-2 mb-8">
+            Innovate. Create. Transform.
+          </h1>
+        </div>
+        
+        <div className="relative">
+          <p className="text-xl mb-2">The Innovation and Entrepreneurship Hub of Model Engineering College</p>
+          
+        </div>
         
         {/* Animated double chevron */}
         <div className="animate-bounce mt-8 pt-16">

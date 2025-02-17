@@ -48,6 +48,36 @@ export default function Testimonials() {
         { name: "Kiran Rajeev", text: "I built my first prototype here with amazing support!" },
         { name: "Reshma Pillai", text: "A must-join space for all MEC students who love tech." },
         { name: "Manoj Krishna", text: "If you have an idea, IdeaLab is the place to make it happen!" },
+        { name: "Arjun Raj", text: "IdeaLab MEC helped me turn my project into reality!" },
+        { name: "Neha Unnikrishnan", text: "An amazing space to collaborate and innovate." },
+        { name: "Adwaith Krishna", text: "Great mentors and a fantastic environment for creativity!" },
+        { name: "Megha Suresh", text: "Best place for tech enthusiasts at MEC!" },
+        { name: "Vishnu Menon", text: "A hub for innovation and hands-on learning!" },
+        { name: "Anjali Pradeep", text: "I got the best guidance for my startup idea here!" },
+        { name: "Rahul Dev", text: "The best place to work on real-world projects!" },
+        { name: "Sneha Ramesh", text: "I learned so much about entrepreneurship at IdeaLab." },
+        { name: "Sidharth Babu", text: "The perfect place to bring ideas to life!" },
+        { name: "Gowri Nair", text: "The mentors here helped me refine my project idea." },
+        { name: "Harish Kumar", text: "Being part of IdeaLab has been an incredible experience!" },
+        { name: "Athira Mohan", text: "A great community of like-minded innovators." },
+        { name: "Kiran Rajeev", text: "I built my first prototype here with amazing support!" },
+        { name: "Reshma Pillai", text: "A must-join space for all MEC students who love tech." },
+        { name: "Manoj Krishna", text: "If you have an idea, IdeaLab is the place to make it happen!" },
+        { name: "Arjun Raj", text: "IdeaLab MEC helped me turn my project into reality!" },
+        { name: "Neha Unnikrishnan", text: "An amazing space to collaborate and innovate." },
+        { name: "Adwaith Krishna", text: "Great mentors and a fantastic environment for creativity!" },
+        { name: "Megha Suresh", text: "Best place for tech enthusiasts at MEC!" },
+        { name: "Vishnu Menon", text: "A hub for innovation and hands-on learning!" },
+        { name: "Anjali Pradeep", text: "I got the best guidance for my startup idea here!" },
+        { name: "Rahul Dev", text: "The best place to work on real-world projects!" },
+        { name: "Sneha Ramesh", text: "I learned so much about entrepreneurship at IdeaLab." },
+        { name: "Sidharth Babu", text: "The perfect place to bring ideas to life!" },
+        { name: "Gowri Nair", text: "The mentors here helped me refine my project idea." },
+        { name: "Harish Kumar", text: "Being part of IdeaLab has been an incredible experience!" },
+        { name: "Athira Mohan", text: "A great community of like-minded innovators." },
+        { name: "Kiran Rajeev", text: "I built my first prototype here with amazing support!" },
+        { name: "Reshma Pillai", text: "A must-join space for all MEC students who love tech." },
+        { name: "Manoj Krishna", text: "If you have an idea, IdeaLab is the place to make it happen!" },
       ];    
 
   return (
@@ -73,7 +103,7 @@ export default function Testimonials() {
             }}
             transition={{
               repeat: Infinity,
-              duration: 160,
+              duration: 260,
               ease: "linear",
             }}
           >

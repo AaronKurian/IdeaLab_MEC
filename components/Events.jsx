@@ -88,23 +88,27 @@ export default function Events() {
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="relative h-72 w-auto">
+              <div className="relative h-72 w-auto m-2 rounded-lg">
                 <Image
                   src={event.image}
                   alt={event.title}
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-md"
                 />
               </div>
               <div className="p-8">
                 <h3 className="text-xl font-semibold text-center mb-4 line-clamp-2 min-h-[3.5rem] text-[#1d3a3b]">{event.title}</h3>
-                <div className="flex items-center space-x-2 text-gray-600 mb-3">
-                  <CalendarIcon className="w-5 h-5" />
-                  <span>{event.date}</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gray-600">
-                  <MapPinIcon className="w-5 h-5" />
-                  <span>{event.location}</span>
+                <div className="flex justify-center">
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-2 text-gray-600">
+                      <CalendarIcon className="w-5 h-5" />
+                      <span>{event.date}</span>
+                    </div>
+                    <div className="flex items-center space-x-2 text-gray-600">
+                      <MapPinIcon className="w-5 h-5" />
+                      <span>{event.location}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -115,7 +119,6 @@ export default function Events() {
           <div 
             className="text-center mt-16 -mb-8"
             data-aos="fade-up"
-            data-aos-delay="300"
           >
             <button
               onClick={() => setShowAllEvents(!showAllEvents)}

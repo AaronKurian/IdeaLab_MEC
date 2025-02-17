@@ -1,9 +1,13 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import idealab2 from '@/public/idealab2.jpg';
+import { RxHamburgerMenu } from "react-icons/rx";
+import { IoCloseOutline } from "react-icons/io5";
 
 export default function Navbar() {
+  const [mobilenav, setmobilenav] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [bookingForm, setBookingForm] = useState({
     name: '',
@@ -50,10 +54,33 @@ export default function Navbar() {
     });
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight / 5) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && typeof document !== "undefined") {
+      document.body.style.overflowY = mobilenav ? "hidden" : "auto";
+    }
+  }, [mobilenav]);
+
   return (
     <>
-      <nav className="relative z-10 container mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center">
+      <nav className={`w-screen text-[#4d5f74] max-h-[90px] h-full flex flex-row items-center justify-between max-lg:pl-3 lg:justify-center lg:px-[3.5rem] fixed top-0 z-[999] transition-all duration-500 ease-in-out ${
+        scrolled 
+          ? "bg-custom-dark/[.5] before:backdrop-blur-md before:absolute before:inset-0 before:-z-10" 
+          : "bg-custom-dark/[.9] before:backdrop-blur-sm before:absolute before:inset-0 before:-z-10"
+      }`}>
+        <a href="https://idea-lab-mec.vercel.app/" className="flex items-center">
           <Image 
             src={idealab2}
             alt="IDEALAB MEC Logo" 
@@ -62,16 +89,58 @@ export default function Navbar() {
             className="rounded-full" 
           />
           <span className="ml-3 text-xl font-bold">IDEALAB MEC</span>
-        </div>
-        <div className="hidden md:flex space-x-8">
-          <a href="#about" className="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 bg-clip-text">About</a>
-          <a href="#events" className="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 bg-clip-text">Events</a>
-          <a href="#facilities" className="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 bg-clip-text">Facilities</a>
-          <a href="#team" className="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 bg-clip-text">Team</a>
+        </a>
 
+        <button
+          onClick={() => setmobilenav(!mobilenav)}
+          className="text-4xl block lg:hidden mr-3"
+        >
+          {!mobilenav ? (
+            <RxHamburgerMenu className="text-[40px]" />
+          ) : (
+            <IoCloseOutline className="text-[40px]" />
+          )}
+        </button>
+
+        <div className={`text-[#4d5f74]/[.8] fixed lg:static lg:w-max lg:h-max lg:pt-0 lg:bg-transparent lg:block top-0 w-screen h-screen text-center items-center transform transition-all duration-500 ease-in-out ${
+          mobilenav
+            ? "right-0 flex flex-col gap-[50px] bg-custom-dark/[.8] backdrop-blur pt-24"
+            : "right-[-100%] flex flex-col gap-8"
+        }`}>
+          <a 
+            href="#about" 
+            className="font-satoshi text-base hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 hover:bg-clip-text hover:text-transparent group transition-all duration-300 ease-in-out lg:ml-8"
+            onClick={() => mobilenav && setmobilenav(false)}
+          >
+            About
+          </a>
+          <a 
+            href="#events" 
+            className="font-satoshi text-base hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 hover:bg-clip-text hover:text-transparent group transition-all duration-300 ease-in-out lg:ml-8"
+            onClick={() => mobilenav && setmobilenav(false)}
+          >
+            Events
+          </a>
+          <a 
+            href="#facilities" 
+            className="font-satoshi text-base hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 hover:bg-clip-text hover:text-transparent group transition-all duration-300 ease-in-out lg:ml-8"
+            onClick={() => mobilenav && setmobilenav(false)}
+          >
+            Facilities
+          </a>
+          <a 
+            href="#team" 
+            className="font-satoshi text-base hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 hover:bg-clip-text hover:text-transparent group transition-all duration-300 ease-in-out lg:ml-8"
+            onClick={() => mobilenav && setmobilenav(false)}
+          >
+            Team
+          </a>
           <button 
-            onClick={() => setIsBookingOpen(true)} 
-            className="bg-white text-[#2a559e] px-4 py-2 -mt-2 rounded-full font-semibold hover:bg-blue-50 transition-colors"
+            onClick={() => {
+              setIsBookingOpen(true);
+              setmobilenav(false);
+            }}
+            className="bg-white text-[#2a559e] px-4 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors lg:ml-8"
           >
             Book Facility
           </button>
@@ -80,8 +149,17 @@ export default function Navbar() {
 
       {/* Booking Dialog */}
       {isBookingOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg max-w-md w-full p-6 max-h-[90vh] overflow-y-auto">
+        <div 
+          className="fixed inset-0 bg-black transition-opacity duration-300 ease-in-out flex items-center justify-center p-4 z-[1000]"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+        >
+          <div 
+            className="bg-white rounded-lg max-w-md w-full p-6 max-h-[90vh] overflow-y-auto transform transition-all duration-300 ease-in-out"
+            style={{ 
+              opacity: isBookingOpen ? 1 : 0,
+              transform: isBookingOpen ? 'scale(1)' : 'scale(0.95)'
+            }}
+          >
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-2xl font-bold text-gray-800 flex-1 text-center">Request Equipment</h2>
               <button 
