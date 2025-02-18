@@ -81,7 +81,7 @@ export default function Testimonials() {
       ];    
 
   return (
-    <section id="testimonials" className="py-20 bg-[#D9D9D9]">
+    <section id="testimonials" className="py-20 bg-[#f5fafc] font-satoshi">
       <div className="container mx-auto px-6">
         <div className="border-t border-[#bbbbbb] pb-16 mx-12"></div>
         <h2 

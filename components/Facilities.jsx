@@ -78,7 +78,7 @@ export default function Facilities() {
     const visibleFacilities = showAllFacilities ? facilities : facilities.slice(0, 3);
 
   return (
-    <section id="facilities" className="py-20 bg-[#D9D9D9]">
+    <section id="facilities" className="py-20 bg-[#f5fafc] font-satoshi">
       <div className="container mx-auto px-6">
         <div className="border-t border-[#bbbbbb] pb-16 mx-12"></div>
         <h2 
@@ -91,7 +91,7 @@ export default function Facilities() {
           {visibleFacilities.map((facility, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow max-w-xs w-full md:w-[calc(33.333%-1.33rem)]"
+              className="bg-gradient-to-b from-white to-gray-100 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow max-w-xs w-full md:w-[calc(33.333%-1.33rem)]"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >

@@ -1,6 +1,6 @@
 export default function Initiatives() {
   return (
-    <section id="initiatives" className="py-20 bg-[#D9D9D9]">
+    <section id="initiatives" className="py-20 bg-[#f5fafc] font-satoshi">
       <div className="border-t border-[#bbbbbb] pb-16 mx-12"></div>
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-12 text-[#353535]" data-aos="fade-up">Our Initiatives</h2>
@@ -24,7 +24,7 @@ export default function Initiatives() {
           ].map((initiative, index) => (
             <div 
               key={index} 
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+              className="bg-gradient-to-b from-white to-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >

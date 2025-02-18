@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 
 export default function Landing() {
   return (
-    <header className="relative w-full h-screen text-white overflow-hidden">
+    <header className="relative w-full h-screen text-white overflow-hidden font-satoshi">
       <video 
         autoPlay 
         loop 
@@ -22,21 +22,21 @@ export default function Landing() {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative z-10 container mx-auto pt-40 px-6 py-20 text-center">
+      <div className="relative z-10 container mx-auto pt-64 sm:pt-60 px-1 sm:px-6 py-20 text-center">
         <div className="relative">
-          <h1 className="text-7xl font-bold mb-1">Innovate. Create. Transform.</h1>
-          <h1 className="text-7xl font-bold opacity-[0.15] blur-[1.4px] scale-y-[-1] transform-gpu -mt-2 mb-8">
+          <h1 className="text-2xl sm:text-7xl font-bold mb-1">Innovate. Create. Transform.</h1>
+          <h1 className="text-2xl sm:text-7xl font-bold opacity-[0.15] blur-[1.4px] scale-y-[-1] transform-gpu -mt-2 mb-8">
             Innovate. Create. Transform.
           </h1>
         </div>
         
         <div className="relative">
-          <p className="text-xl mb-2">The Innovation and Entrepreneurship Hub of Model Engineering College</p>
+          <p className="text-xl mb-2 px-2 mt-20 sm:mt-2">The Innovation and Entrepreneurship Hub of Model Engineering College</p>
           
         </div>
         
         {/* Animated double chevron */}
-        <div className="animate-bounce mt-8 pt-16">
+        <div className="animate-bounce mt-8 pt-28 sm:pt-16">
           <svg 
             className="w-8 h-8 mx-auto"
             fill="none" 

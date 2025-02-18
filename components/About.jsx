@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-[#D9D9D9]">
+    <section id="about" className="py-20 bg-[#f5fafc] font-satoshi">
       <div className="container mx-auto px-6  md:px-12">
         <h2 
           data-aos="fade-up"

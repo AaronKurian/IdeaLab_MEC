@@ -7,11 +7,11 @@ import cognicor from '@/public/cognicor.webp';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#353535] text-white py-12">
+    <footer className="bg-[#353535] text-white py-12 font-satoshi">
       <div className="container mx-auto px-6">
         {/* Logos Section */}
         <div 
-          className="flex justify-center space-x-12 mb-8"
+          className="flex justify-center space-x-8 sm:space-x-12 mb-8 px-2"
           data-aos="fade-up"
         >
           <Image

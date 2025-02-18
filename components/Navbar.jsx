@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import idealab2 from '@/public/idealab2.jpg';
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -19,6 +19,7 @@ export default function Navbar() {
     equipment: '',
     description: ''
   });
+  const navRef = useRef(null);
 
   const facilities = [
     {
@@ -73,9 +74,20 @@ export default function Navbar() {
     }
   }, [mobilenav]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setmobilenav(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
     <>
-      <nav className={`w-screen text-[#4d5f74] max-h-[90px] h-full flex flex-row items-center justify-between max-lg:pl-3 lg:justify-center lg:px-[3.5rem] fixed top-0 z-[999] transition-all duration-500 ease-in-out ${
+      <nav ref={navRef} className={`w-screen font-satoshi text-[#4d5f74] max-h-[90px] h-full flex flex-row items-center justify-between max-lg:pl-3 lg:justify-center lg:px-[3.5rem] fixed top-0 z-[999] transition-all duration-500 ease-in-out ${
         scrolled 
           ? "bg-custom-dark/[.5] before:backdrop-blur-md before:absolute before:inset-0 before:-z-10" 
           : "bg-custom-dark/[.9] before:backdrop-blur-sm before:absolute before:inset-0 before:-z-10"
@@ -86,19 +98,19 @@ export default function Navbar() {
             alt="IDEALAB MEC Logo" 
             width={50} 
             height={50} 
-            className="rounded-full" 
+            className="rounded-full border-[1.4px] border-white shadow-[0_0_10px_3px_rgba(255,255,255,0.3)] transition-shadow duration-300 hover:shadow-[0_0_15px_5px_rgba(255,255,255,0.5)]" 
           />
-          <span className="ml-3 text-xl font-bold">IDEALAB MEC</span>
+          <span className="ml-3 text-xl font-extrabold">IDEALAB MEC</span>
         </a>
 
         <button
           onClick={() => setmobilenav(!mobilenav)}
-          className="text-4xl block lg:hidden mr-3"
+          className="text-4xl block lg:hidden mr-3 z-50"
         >
-          {!mobilenav ? (
-            <RxHamburgerMenu className="text-[40px]" />
-          ) : (
+          {mobilenav ? (
             <IoCloseOutline className="text-[40px]" />
+          ) : (
+            <RxHamburgerMenu className="text-[40px]" />
           )}
         </button>
 
@@ -109,28 +121,28 @@ export default function Navbar() {
         }`}>
           <a 
             href="#about" 
-            className="font-satoshi text-base hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 hover:bg-clip-text hover:text-transparent group transition-all duration-300 ease-in-out lg:ml-8"
+            className="font-satoshi text-base font-semibold hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 hover:bg-clip-text hover:text-transparent group transition-all duration-300 ease-in-out lg:ml-8"
             onClick={() => mobilenav && setmobilenav(false)}
           >
             About
           </a>
           <a 
             href="#events" 
-            className="font-satoshi text-base hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 hover:bg-clip-text hover:text-transparent group transition-all duration-300 ease-in-out lg:ml-8"
+            className="font-satoshi text-base font-semibold hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 hover:bg-clip-text hover:text-transparent group transition-all duration-300 ease-in-out lg:ml-8"
             onClick={() => mobilenav && setmobilenav(false)}
           >
             Events
           </a>
           <a 
             href="#facilities" 
-            className="font-satoshi text-base hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 hover:bg-clip-text hover:text-transparent group transition-all duration-300 ease-in-out lg:ml-8"
+            className="font-satoshi text-base font-semibold hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 hover:bg-clip-text hover:text-transparent group transition-all duration-300 ease-in-out lg:ml-8"
             onClick={() => mobilenav && setmobilenav(false)}
           >
             Facilities
           </a>
           <a 
             href="#team" 
-            className="font-satoshi text-base hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 hover:bg-clip-text hover:text-transparent group transition-all duration-300 ease-in-out lg:ml-8"
+            className="font-satoshi text-base font-semibold hover:bg-gradient-to-r hover:from-red-500 hover:via-blue-500 hover:to-yellow-500 hover:bg-clip-text hover:text-transparent group transition-all duration-300 ease-in-out lg:ml-8"
             onClick={() => mobilenav && setmobilenav(false)}
           >
             Team
@@ -140,7 +152,7 @@ export default function Navbar() {
               setIsBookingOpen(true);
               setmobilenav(false);
             }}
-            className="bg-white text-[#2a559e] px-4 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors lg:ml-8"
+            className="bg-white text-[#2a559e] px-4 py-2 rounded-full font-semibold hover:bg-[#2a559e] hover:text-white transition-colors lg:ml-8"
           >
             Book Facility
           </button>

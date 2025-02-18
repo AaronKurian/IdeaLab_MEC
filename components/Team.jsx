@@ -3,13 +3,10 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { ChevronDownIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import { FaLinkedin } from 'react-icons/fa';
-import idealab from '@/public/idealab.jpeg';
-import idealab2 from '@/public/idealab2.jpg';
-import cognicor from '@/public/cognicor.webp';
 import member1 from '@/public/alan_biju.jpg';
 import member2 from '@/public/godson.png';
 import member3 from '@/public/Athulya.jpg';
-import member4 from '@/public/Balu.jpeg';
+import member4 from '@/public/balu.jpeg';
 import member5 from '@/public/Meenakshi.jpg';
 import member6 from '@/public/Aparna_H.jpg';
 import member7 from '@/public/aardra.JPG';
@@ -156,7 +153,7 @@ export default function Team() {
   const visibleMembers = showAllMembers ? teamMembers : teamMembers.slice(0, 4);
 
   return (
-    <section id="team" className="py-20 bg-[#D9D9D9]">
+    <section id="team" className="py-20 bg-[#f5fafc] font-satoshi">
       <div className="container mx-auto px-6">
         <div className="border-t border-[#bbbbbb] pb-16 mx-12"></div>
         <h2 
@@ -255,7 +252,6 @@ export default function Team() {
           ))}
         </div>
 
-        {/* Show More Button */}
         {teamMembers.length > 4 && (
           <div 
             className="text-center mt-16 -mb-8"

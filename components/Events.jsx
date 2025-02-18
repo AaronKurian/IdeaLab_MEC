@@ -76,15 +76,15 @@ export default function Events() {
   const visibleEvents = showAllEvents ? pastEvents : pastEvents.slice(0, 3);
 
   return (
-    <section id="events" className="py-20 bg-[#D9D9D9]">
+    <section id="events" className="py-20 bg-[#f5fafc] font-satoshi">
       <div className="container mx-auto px-6">
         <div className="border-t border-[#bbbbbb] pb-16 mx-12"></div>
         <h2 className="text-3xl font-bold text-center mb-16 text-[#353535]" data-aos="fade-up">Past Events</h2>
-        <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {visibleEvents.map((event, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow max-w-sm mx-auto w-full"
+              className="bg-gradient-to-b from-white to-gray-100 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow max-w-sm mx-auto w-full"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
